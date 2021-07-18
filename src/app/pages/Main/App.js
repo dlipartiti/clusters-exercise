@@ -1,15 +1,15 @@
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import ClustersContainer from './components/ClustersContainer';
+
 import './App.scss';
 
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-          CHALLENGE
-      </header>
-      <main className="app-main">ALL THE REST</main>
-      <footer className="app-footer">
-        Copyright 2021 - Dario Lipartiti
-      </footer>
+      <Header title="CHALLENGE" />
+      <ClustersContainer />
+      <Footer />
     </div>
   );
 }

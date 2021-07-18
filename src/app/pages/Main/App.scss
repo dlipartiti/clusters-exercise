@@ -1,26 +1,15 @@
 @import '../../styles/variables';
+@import '../../components/Footer/styles';
+@import '../../components/Header/styles';
+@import './components/ClustersContainer/styles';
+@import './components/BoardSizeSelector/styles';
+@import './components/ClustersBoard/styles';
+@import '../../components/NumberSelector/styles';
 
 .app {
     text-align: center;
 }
 
-.app-header {
-    background-color: #282c34;
-    padding: 20px 0;
-    font-size: 24px;
-    color: white;
-}
-
-.app-footer {
-    background-color: $lighterblue;
-    padding: $padding-vertical;
-}
-
 .app-link {
     color: #61dafb;
-}
-
-.app-main {
-    min-height: calc(100vh - 126px);
-    padding: $padding-vertical;
 }
