@@ -1,0 +1,22 @@
+.clusters-board {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: $margin-vertical;
+
+  table {
+    background-color: whitesmoke;
+    padding: 5px;
+  }
+
+  &--submit {
+    &.MuiButtonBase-root{
+      margin-top: 10px;
+      margin-left: auto;
+    }
+  }
+
+  &--loader {
+    margin: 0 auto;
+  }
+}

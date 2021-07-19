@@ -1,0 +1,11 @@
+.clusters-board-row--cell {
+  cursor: pointer;
+  border: 1px solid #aeaeae;
+  padding: 10px;
+  width: 15px;
+  height: 15px;
+
+  &.validated {
+    background-color: lightgreen;
+  }
+}

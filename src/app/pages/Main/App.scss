@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+@import '../../components/Footer/styles';
+@import '../../components/Header/styles';
+@import './components/ClustersContainer/styles';
+@import './components/BoardSizeSelector/styles';
+@import './components/ClustersBoard/styles';
+@import './components/ClustersBoardCell/styles';
+@import '../../components/NumberSelector/styles';
+
+.app {
+    text-align: center;
+}
+
+.app-link {
+    color: #61dafb;
+}
