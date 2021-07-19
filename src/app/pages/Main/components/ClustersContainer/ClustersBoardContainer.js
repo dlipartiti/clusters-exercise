@@ -4,11 +4,20 @@ import BoardSizeSelector from '../BoardSizeSelector';
 import ClustersBoard from '../ClustersBoard';
 import Container from '@material-ui/core/Container';
 
-const ClustersContainer = props => {
-  const [boardSize, setBoardSize] = useState({ width: 10, height: 10 });
+import { INITIAL_BOARD_SIZE } from '../../../../../constants/boardProperties';
+
+const ClustersBoardContainer = props => {
+  const clusterBoardRef = React.useRef(false);
+
+  const [boardSize, setBoardSize] = useState(INITIAL_BOARD_SIZE);
 
   const changeBoardWidth = (newWidth) => setBoardSize({ ...boardSize, width: newWidth });
   const changeBoardHeight = (newHeight) => setBoardSize({ ...boardSize, height: newHeight });
+
+  const refreshBoard = () => {
+    setBoardSize(INITIAL_BOARD_SIZE);
+    return clusterBoardRef.current.refreshMatrix();
+  }
 
   return (
     <main className="app-main">
@@ -18,11 +27,12 @@ const ClustersContainer = props => {
           currentHeight={boardSize.height}
           changeBoardWidth={changeBoardWidth}
           changeBoardHeight={changeBoardHeight}
+          refreshBoard={refreshBoard}
         />
-        <ClustersBoard boardSize={boardSize} />
+        <ClustersBoard ref={clusterBoardRef} boardSize={boardSize} />
       </Container>
     </main>
   );
 };
 
-export default ClustersContainer;
+export default ClustersBoardContainer;

@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/pages/Main/App';
 import reportWebVitals from './reportWebVitals';
+import { FlowContextProvider } from './app/context/FlowContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FlowContextProvider>
+      <App />
+    </FlowContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

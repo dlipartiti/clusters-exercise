@@ -1,3 +1,3 @@
-import ClustersContainer from './ClustersContainer';
+import ClustersBoardContainer from './ClustersBoardContainer';
 
-export default ClustersContainer;
+export default ClustersBoardContainer;

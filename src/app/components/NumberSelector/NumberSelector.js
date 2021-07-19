@@ -6,21 +6,21 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-const NumberSelector = ({ currentNumber, onSelectNumber, rangeOfNumbers, label, key }) => {
+const NumberSelector = ({ currentNumber, onSelectNumber, rangeOfNumbers, label, uniqueKey, disabled }) => {
   return (
-    <FormControl className="number-selector-container">
-      <InputLabel shrink id={`${key}-number-selector`}>
+    <FormControl className="number-selector-container" disabled={disabled}>
+      <InputLabel shrink id={`${uniqueKey}-number-selector`}>
         {label}
       </InputLabel>
       <Select
-        labelId={`${key}-number-selector`}
+        labelId={`${uniqueKey}-number-selector`}
         value={currentNumber}
         onChange={onSelectNumber}
         displayEmpty
       >
       {
         rangeOfNumbers.map(number => (
-          <MenuItem key={`${key}-${number}`} value={number}>{number}</MenuItem>
+          <MenuItem key={`${uniqueKey}-${number}`} value={number}>{number}</MenuItem>
         ))
       }
       </Select>
@@ -29,7 +29,8 @@ const NumberSelector = ({ currentNumber, onSelectNumber, rangeOfNumbers, label, 
 };
 
 NumberSelector.defaultProps = {
-  currentNumber: 10
+  currentNumber: 10,
+  disabled: false
 }
 
 NumberSelector.propTypes = {
@@ -37,7 +38,8 @@ NumberSelector.propTypes = {
   onSelectNumber: PropTypes.func.isRequired,
   rangeOfNumbers: PropTypes.arrayOf(PropTypes.number).isRequired,
   label: PropTypes.string.isRequired,
-  key: PropTypes.string.isRequired
+  uniqueKey: PropTypes.string.isRequired,
+  disabled: PropTypes.bool
 };
 
 export default NumberSelector;
