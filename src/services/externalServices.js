@@ -3,7 +3,7 @@ const getRandomNumber = require('../utils/mathHelper')
 const { INACTIVE_POINT, ACTIVE_POINT } = require('../constants/boardProperties');
 
 class ExternalServices {
-  static async getBoardConfiguration(numberOfColumns, numberOfRows) {
+  static getBoardConfiguration(numberOfColumns, numberOfRows) {
     const boardConfiguration = Array(numberOfRows).fill(0).map(() => {
       const randomWildcard = getRandomNumber(numberOfRows < numberOfColumns? numberOfRows : numberOfColumns);
 
